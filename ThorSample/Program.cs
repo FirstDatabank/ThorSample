@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
+using ThorSample.Model;
 
 namespace ThorSample
 {
@@ -18,8 +16,8 @@ namespace ThorSample
             //const string clientId = "REPLACE_THIS_TEXT_WITH_YOUR_PROVIDED_CLIENT_ID";
             //const string secret = "REPLACE_THIS_TEXT_WITH_YOUR_PROVIDED_SECRET";
 
-            const string clientId = "REPLACE_THIS_TEXT_WITH_YOUR_PROVIDED_CLIENT_ID";
-            const string secret = "REPLACE_THIS_TEXT_WITH_YOUR_PROVIDED_SECRET";
+            const string clientId = "40";
+            const string secret = "qeRUTHQFrHvYN0Abe7mDNE+aNfTvwySgqIFrEl1isAE=";
 
             static void Main(string[] args)
             {
@@ -53,23 +51,35 @@ namespace ThorSample
                 //Look for a 200 status code.  400 level status codes indicate something went wrong that a client could potentially fix.
                 // For example, 401 unauthorized, or 404 not found.
                 // 500 level errors indicate that something went wrong on the server side.
-                //if (response.IsSuccessStatusCode)
-                //{
+                if (response.IsSuccessStatusCode)
+                {
 
-                //    var r = await response.Content.ReadAsAsync<SearchDrugNameResponse>();
-                //    foreach (var drugName in r.Items)
-                //    {
-                //        Console.WriteLine(drugName.DrugNameID);
-                //    }
+                    var r = await response.Content.ReadAsAsync<SearchDrugNamesResponse>();
+                    foreach (var drugName in r.Items)
+                    {
+                        Console.WriteLine("DrugNameID: " +drugName.DrugNameID);
+                        Console.WriteLine("DrugNameDescriptions:");
+                        foreach (var drugDesc in drugName.DrugNameDescriptions)
+                        {
+                            Console.WriteLine(" DrugNameDesc: " + drugDesc.DrugNameDesc);
+                            Console.WriteLine(" DrugNameLanguage: " + drugDesc.DrugNameLanguage);
+                        }
+                        Console.WriteLine("GenericDrugNameID: " + drugName.GenericDrugNameID);
+                        Console.WriteLine("NameTypeCode: " + drugName.NameTypeCode);
+                        Console.WriteLine("NameTypeCodeDesc: " + drugName.NameTypeCodeDesc);
+                        Console.WriteLine("StatusCode: " + drugName.StatusCode);
+                        Console.WriteLine("StatusCodeDesc: " + drugName.StatusCodeDesc);
+                        Console.WriteLine("");
+                    }
+                    Console.WriteLine("TotalResultCount: " + r.TotalResultCount);
+                    Console.WriteLine("");
 
-                //    Console.WriteLine("");
-
-                //}
-                //else
-                //{
-                //    Console.WriteLine("Call Failed, reason: " + response.ReasonPhrase);
-                //    Console.WriteLine("");
-                //}
+                }
+                else
+                {
+                    Console.WriteLine("Call Failed, reason: " + response.ReasonPhrase);
+                    Console.WriteLine("");
+                }
 
                 Console.WriteLine("Press Enter to Exit.");
                     Console.ReadLine();
