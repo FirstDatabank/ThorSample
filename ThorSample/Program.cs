@@ -8,7 +8,7 @@ namespace ThorSample
 {
     class Program
     {
-            //Note:  Make this address configurable in your app.  It is almost certainly going to change for our device services.
+            //Note:  Make this address configurable in your app.  It is almost certainly going to change for our thor services.
             //Also note that right now this url and parameter names are case sensitive.
             const string baseAddress = "https://qm.fdbcloudconnector.com/thor/api/v1_4/";
 
@@ -37,16 +37,16 @@ namespace ThorSample
                     client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
                     //Now structure the request so that it searches on the fields you want.
-                    //Here is a request that returns the top 100 devices in the database
+                    //Here is a request that returns the top 100 drugnames in the database for thor
                     var request = "DrugNames?limit=100&offset=1&callSystemName=ConsoleAppExample";
 
-                    //OTHER EXAMPLES:
-                    //Here is an example of searching for a GTIN14
-                    //var request = "devices?searchFilter=GTIN14:09420012421777&callSystemName=ConsoleAppExample";
+                //OTHER EXAMPLES:
+                //Here is an example of searching for a GTIN14
+                //var request = "DrugNames?searchFilter=DrugNameID:11589&callSystemName=ConsoleAppExample";
 
 
-                    //We always recommend calling API services asynchronously
-                    HttpResponseMessage response = await client.GetAsync(request);
+                //We always recommend calling API services asynchronously
+                HttpResponseMessage response = await client.GetAsync(request);
 
                 //Look for a 200 status code.  400 level status codes indicate something went wrong that a client could potentially fix.
                 // For example, 401 unauthorized, or 404 not found.

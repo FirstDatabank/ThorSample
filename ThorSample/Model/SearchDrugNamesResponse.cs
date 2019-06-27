@@ -64,7 +64,7 @@ namespace ThorSample.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class SearchDevicesResponse {\n");
+            sb.Append("class SearchDrugNameResponse {\n");
             sb.Append("  ServiceCallId: ").Append(ServiceCallId).Append("\n");
             sb.Append("  Limit: ").Append(limit).Append("\n");
             sb.Append("  Offset: ").Append(offset).Append("\n");
