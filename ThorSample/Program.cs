@@ -16,8 +16,8 @@ namespace ThorSample
             //const string clientId = "REPLACE_THIS_TEXT_WITH_YOUR_PROVIDED_CLIENT_ID";
             //const string secret = "REPLACE_THIS_TEXT_WITH_YOUR_PROVIDED_SECRET";
 
-            const string clientId = "40";
-            const string secret = "qeRUTHQFrHvYN0Abe7mDNE+aNfTvwySgqIFrEl1isAE=";
+            const string clientId = "REPLACE_THIS_TEXT_WITH_YOUR_PROVIDED_CLIENT_ID";
+            const string secret = "REPLACE_THIS_TEXT_WITH_YOUR_PROVIDED_SECRET";
 
             static void Main(string[] args)
             {
