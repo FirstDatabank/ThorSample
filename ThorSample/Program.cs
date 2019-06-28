@@ -10,12 +10,9 @@ namespace ThorSample
     {
             //Note:  Make this address configurable in your app.  It is almost certainly going to change for our thor services.
             //Also note that right now this url and parameter names are case sensitive.
-            const string baseAddress = "https://qm.fdbcloudconnector.com/thor/api/v1_4/";
+            const string baseAddress = "https://api.fdbcloudconnector.com/thor/api/v1_4/";
 
             //Update these two variables with the credentials provided by FDB
-            //const string clientId = "REPLACE_THIS_TEXT_WITH_YOUR_PROVIDED_CLIENT_ID";
-            //const string secret = "REPLACE_THIS_TEXT_WITH_YOUR_PROVIDED_SECRET";
-
             const string clientId = "REPLACE_THIS_TEXT_WITH_YOUR_PROVIDED_CLIENT_ID";
             const string secret = "REPLACE_THIS_TEXT_WITH_YOUR_PROVIDED_SECRET";
 
