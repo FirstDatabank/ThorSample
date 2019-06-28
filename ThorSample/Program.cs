@@ -38,7 +38,7 @@ namespace ThorSample
                     var request = "DrugNames?limit=100&offset=1&callSystemName=ConsoleAppExample";
 
                 //OTHER EXAMPLES:
-                //Here is an example of searching for a GTIN14
+                //Here is an example of searching for a specific DrugNameID
                 //var request = "DrugNames?searchFilter=DrugNameID:11589&callSystemName=ConsoleAppExample";
 
 
